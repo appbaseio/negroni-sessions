@@ -2,7 +2,7 @@ package cookiestore
 
 import (
 	gSessions "github.com/appbaseio/sessions"
-	nSessions "github.com/goincremental/negroni-sessions"
+	nSessions "github.com/appbaseio/negroni-sessions"
 )
 
 // New returns a new CookieStore.

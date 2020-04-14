@@ -5,7 +5,7 @@ import (
 	"time"
 
 	gSessions "github.com/appbaseio/sessions"
-	nSessions "github.com/goincremental/negroni-sessions"
+	nSessions "github.com/appbaseio/negroni-sessions"
 	"github.com/gorilla/securecookie"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"

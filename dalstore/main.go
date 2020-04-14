@@ -6,7 +6,7 @@ import (
 
 	gSessions "github.com/appbaseio/sessions"
 	"github.com/goincremental/dal"
-	nSessions "github.com/goincremental/negroni-sessions"
+	nSessions "github.com/appbaseio/negroni-sessions"
 	"github.com/gorilla/securecookie"
 )
 

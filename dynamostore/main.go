@@ -3,7 +3,7 @@ package dynamostore
 import (
 	gSessions "github.com/appbaseio/sessions"
 	dynstore "github.com/denizeren/dynamostore"
-	nSessions "github.com/goincremental/negroni-sessions"
+	nSessions "github.com/appbaseio/negroni-sessions"
 )
 
 //New returns a new Dynamodb store
