@@ -1,9 +1,9 @@
 package dynamostore
 
 import (
+	gSessions "github.com/appbaseio/sessions"
 	dynstore "github.com/denizeren/dynamostore"
 	nSessions "github.com/goincremental/negroni-sessions"
-	gSessions "github.com/gorilla/sessions"
 )
 
 //New returns a new Dynamodb store
@@ -27,5 +27,6 @@ func (c *dynamoStore) Options(options nSessions.Options) {
 		MaxAge:   options.MaxAge,
 		Secure:   options.Secure,
 		HttpOnly: options.HTTPOnly,
+		SameSite: options.SameSite,
 	}
 }

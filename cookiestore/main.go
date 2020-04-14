@@ -1,8 +1,8 @@
 package cookiestore
 
 import (
+	gSessions "github.com/appbaseio/sessions"
 	nSessions "github.com/goincremental/negroni-sessions"
-	gSessions "github.com/gorilla/sessions"
 )
 
 // New returns a new CookieStore.
@@ -21,5 +21,6 @@ func (c *cookieStore) Options(options nSessions.Options) {
 		MaxAge:   options.MaxAge,
 		Secure:   options.Secure,
 		HttpOnly: options.HTTPOnly,
+		SameSite: options.SameSite,
 	}
 }

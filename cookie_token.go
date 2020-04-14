@@ -3,7 +3,7 @@ package sessions
 import (
 	"net/http"
 
-	"github.com/gorilla/sessions"
+	"github.com/appbaseio/sessions"
 )
 
 //TokenGetSetter allows you to save and retrieve a value stored in a cookie

@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"time"
 
+	gSessions "github.com/appbaseio/sessions"
 	nSessions "github.com/goincremental/negroni-sessions"
 	"github.com/gorilla/securecookie"
-	gSessions "github.com/gorilla/sessions"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -45,6 +45,7 @@ func (m *mongoStore) Options(options nSessions.Options) {
 		MaxAge:   options.MaxAge,
 		Secure:   options.Secure,
 		HttpOnly: options.HTTPOnly,
+		SameSite: options.SameSite,
 	}
 }
 
@@ -63,7 +64,7 @@ type mongoStore struct {
 	options    *gSessions.Options
 }
 
-//Implementation of gorilla/sessions.Store interface
+//Implementation of appbaseio/sessions.Store interface
 // Get registers and returns a session for the given name and session store.
 // It returns a new session if there are no sessions registered for the name.
 func (m *mongoStore) Get(r *http.Request, name string) (*gSessions.Session, error) {

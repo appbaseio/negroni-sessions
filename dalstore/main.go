@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"time"
 
+	gSessions "github.com/appbaseio/sessions"
 	"github.com/goincremental/dal"
 	nSessions "github.com/goincremental/negroni-sessions"
 	"github.com/gorilla/securecookie"
-	gSessions "github.com/gorilla/sessions"
 )
 
 // New is returns a store object using the provided dal.Connection
@@ -44,6 +44,7 @@ func (d *dalStore) Options(options nSessions.Options) {
 		MaxAge:   options.MaxAge,
 		Secure:   options.Secure,
 		HttpOnly: options.HTTPOnly,
+		SameSite: options.SameSite,
 	}
 }
 
@@ -62,7 +63,7 @@ type dalStore struct {
 	options    *gSessions.Options
 }
 
-//Implementation of gorilla/sessions.Store interface
+//Implementation of appbaseio/sessions.Store interface
 // Get registers and returns a session for the given name and session store.
 // It returns a new session if there are no sessions registered for the name.
 func (d *dalStore) Get(r *http.Request, name string) (*gSessions.Session, error) {

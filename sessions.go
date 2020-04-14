@@ -28,8 +28,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/appbaseio/sessions"
 	gContext "github.com/gorilla/context"
-	"github.com/gorilla/sessions"
 	"github.com/urfave/negroni"
 )
 
@@ -58,6 +58,7 @@ type Options struct {
 	MaxAge   int
 	Secure   bool
 	HTTPOnly bool
+	SameSite http.SameSite
 }
 
 // Session stores the values and optional configuration for a session.
@@ -188,6 +189,7 @@ func (s *session) Options(options Options) {
 		MaxAge:   options.MaxAge,
 		Secure:   options.Secure,
 		HttpOnly: options.HTTPOnly,
+		SameSite: options.SameSite,
 	}
 }
 

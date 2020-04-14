@@ -1,9 +1,9 @@
 package redisstore
 
 import (
+	gSessions "github.com/appbaseio/sessions"
 	"github.com/boj/redistore"
 	nSessions "github.com/goincremental/negroni-sessions"
-	gSessions "github.com/gorilla/sessions"
 )
 
 //New returns a new Redis store
@@ -26,5 +26,6 @@ func (c *rediStore) Options(options nSessions.Options) {
 		MaxAge:   options.MaxAge,
 		Secure:   options.Secure,
 		HttpOnly: options.HTTPOnly,
+		SameSite: options.SameSite,
 	}
 }
