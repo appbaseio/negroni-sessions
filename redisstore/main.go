@@ -1,9 +1,9 @@
 package redisstore
 
 import (
-	gSessions "github.com/appbaseio/sessions"
-	"github.com/boj/redistore"
 	nSessions "github.com/appbaseio/negroni-sessions"
+	"github.com/appbaseio/redistore"
+	gSessions "github.com/appbaseio/sessions"
 )
 
 //New returns a new Redis store
